@@ -28,7 +28,7 @@
         <aside class="side">
             <div class="panel">
                 <h2>{{ cart:grand_total }}</h2>
-                <p>Delivery and any discount code are worked out at the checkout.</p>
+                <p>{{ if {cart:discount_total} }}Includes your discount. {{ /if }}Delivery is worked out at the checkout.</p>
 
                 {{# Abandoned Cart: the consent box. It saves itself when ticked, so it counts
                     even if the checkout's never finished. The checkout's first step has it too,

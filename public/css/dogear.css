@@ -65,7 +65,7 @@ img { max-width: 100%; }
 }
 .nav .who { font: 12px var(--mono); color: var(--muted); }
 
-.flash { margin: 24px 0 0; padding: 12px 16px; border-left: 3px solid var(--ribbon); background: var(--card); font-size: 15px; }
+.flash { margin: 24px 0; padding: 12px 16px; border-left: 3px solid var(--ribbon); background: var(--card); font-size: 15px; }
 
 main { padding-block: 48px 96px; }
 
