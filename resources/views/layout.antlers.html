@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ segment_1 ? '{title} · Dog-ear Books' : 'Dog-ear Books' }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Atkinson+Hyperlegible:wght@400;700&family=Gloock&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="/css/dogear.css">
+</head>
+<body>
+    <header class="masthead">
+        <div class="wrap">
+            <a class="wordmark" href="/">Dog-ear Books</a>
+            <nav class="nav" aria-label="Main">
+                <a href="/" {{ if segment_1 === '' or segment_1 === 'products' }}aria-current="page"{{ /if }}>Shelves</a>
+                <a class="saved" href="/cart" {{ if segment_1 === 'cart' }}aria-current="page"{{ /if }}>
+                    Basket <span class="count">{{ if {cart:is_empty} }}0{{ else }}{{ cart }}{{ line_items | length }}{{ /cart }}{{ /if }}</span>
+                </a>
+                {{ if logged_in }}
+                    <span class="who">{{ current_user:name }}</span>
+                {{ else }}
+                    <a href="/login">Sign in</a>
+                {{ /if }}
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap">
+        {{# Abandoned Cart: the message after a basket comes back from a reminder. #}}
+        {{ abandoned_cart:restored }}
+            <p class="flash">{{ message }}</p>
+        {{ /abandoned_cart:restored }}
+        {{ get_errors:all }}{{ messages }}<p class="flash">{{ message }}</p>{{ /messages }}{{ /get_errors:all }}
+        {{ template_content }}
+    </main>
+</body>
+</html>

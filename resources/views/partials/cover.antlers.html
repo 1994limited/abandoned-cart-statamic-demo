@@ -1,0 +1,12 @@
+{{# A book cover drawn in CSS. link="true" makes it a link to the book; size: small, large, or nothing for the shelf. #}}
+{{ if link }}
+    <a href="{{ url }}" class="cover cover--{{ cover_style }}" style="--cover: {{ cover }}; --cover-ink: {{ cover_ink }}" aria-label="{{ title }} by {{ byline }}">
+        <span class="cover__title">{{ title }}</span>
+        <span class="cover__author">{{ byline }}</span>
+    </a>
+{{ else }}
+    <div class="cover cover--{{ cover_style }}{{ if size }} cover--{{ size }}{{ /if }}" style="--cover: {{ cover }}; --cover-ink: {{ cover_ink }}" aria-hidden="true">
+        <span class="cover__title">{{ title }}</span>
+        <span class="cover__author">{{ byline }}</span>
+    </div>
+{{ /if }}

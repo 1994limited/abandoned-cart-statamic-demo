@@ -1,0 +1,21 @@
+<div class="shop-head">
+    <div>
+        <p class="eyebrow">New this autumn</p>
+        <h1 class="lede">Left something behind? <em>We kept it.</em></h1>
+        <p class="intro">Put a book in your basket, start the checkout, and wander off. If you said we could, we'll email you a reminder with a link that brings your basket back.</p>
+    </div>
+    <p class="hint">Try it: add a book, give your email at checkout, tick the box, and leave.</p>
+</div>
+
+<ul class="shelf">
+    {{ collection:products sort="title" }}
+        <li class="book">
+            {{ partial:cover link="true" }}
+            {{ if stock === 0 }}<span class="sold-out-tag">Sold out</span>{{ /if }}
+            <div class="shelf__caption">
+                <a href="{{ url }}">{{ title }}</a>
+                <span class="meta"><span>{{ byline }}</span>{{ partial:price }}</span>
+            </div>
+        </li>
+    {{ /collection:products }}
+</ul>

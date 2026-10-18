@@ -1,0 +1,33 @@
+title: 'Book with editions'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          - { handle: title, field: { type: text, required: true, display: Title } }
+          - { handle: byline, field: { type: text, display: Author } }
+          - { handle: blurb, field: { type: textarea, display: Blurb } }
+      -
+        display: 'Price and stock'
+        instructions: 'Each edition (hardback, paperback) has its own price and stock.'
+        fields:
+          - handle: product_variants
+            field:
+              type: product_variants
+              display: Editions
+              option_fields:
+                - { handle: stock, field: { type: integer, display: Stock, instructions: 'Leave empty if you don''t count it.' } }
+      -
+        display: Cover
+        fields:
+          - { handle: cover, field: { type: color, display: 'Cover colour', width: 33 } }
+          - { handle: cover_ink, field: { type: color, display: 'Title colour', width: 33 } }
+          - { handle: cover_style, field: { type: select, display: 'Cover style', width: 33, options: { serif: Serif, block: Block, stripe: Stripe } } }
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          - { handle: slug, field: { type: slug } }
+          - { handle: tax_class, field: { type: tax_classes, display: 'Tax class', max_items: 1 } }

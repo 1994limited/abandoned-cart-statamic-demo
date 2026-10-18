@@ -1,0 +1,42 @@
+{{# The basket: what's in it, the Abandoned Cart consent box, and the way to the checkout. #}}
+<div class="saved-head">
+    <h1>Your basket</h1>
+</div>
+
+{{ if {cart:is_empty} }}
+    <p class="empty">Your basket's empty. <a href="/">Find a book</a>.</p>
+{{ else }}
+    <div class="saved-layout">
+        <ul class="saved-list">
+            {{ cart:line_items }}
+                <li class="saved-row">
+                    {{ product }}{{ partial:cover size="small" }}{{ /product }}
+                    <div>
+                        <h3><a href="{{ product:url }}">{{ product:title }}</a></h3>
+                        <p class="note-plain">{{ if variant }}{{ variant:name }} · {{ /if }}Qty {{ quantity }}</p>
+                    </div>
+                    <div class="saved-row__end">
+                        <span class="price">{{ total }}</span>
+                        {{ cart:remove :line_item="id" redirect="/cart" }}
+                            <button type="submit" class="link-button">Remove</button>
+                        {{ /cart:remove }}
+                    </div>
+                </li>
+            {{ /cart:line_items }}
+        </ul>
+
+        <aside class="side">
+            <div class="panel">
+                <h2>{{ cart:grand_total }}</h2>
+                <p>Delivery and any discount code are worked out at the checkout.</p>
+
+                {{# Abandoned Cart: the consent box. It saves itself when ticked, so it counts
+                    even if the checkout's never finished. The checkout's first step has it too,
+                    for guests; signed-in customers see it here. #}}
+                {{ abandoned_cart:consent class="consent" }}
+
+                <a class="button" href="/checkout">Checkout</a>
+            </div>
+        </aside>
+    </div>
+{{ /if }}

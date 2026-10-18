@@ -1,0 +1,10 @@
+<div class="sign-in">
+    <h1>Sign in</h1>
+    <p class="intro" style="margin:0">Signed in, your basket is kept with your account, and a reminder’s link brings it back once you sign in.</p>
+    {{ user:login_form redirect="/cart" }}
+        {{ if errors }}<p class="flash">{{ errors }}{{ value }} {{ /errors }}</p>{{ /if }}
+        <p><input type="email" name="email" value="jo@example.com" aria-label="Email"></p>
+        <p><input type="password" name="password" value="password" aria-label="Password"></p>
+        <button type="submit" class="button">Sign in</button>
+    {{ /user:login_form }}
+</div>
