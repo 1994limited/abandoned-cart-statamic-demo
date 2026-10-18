@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": "^8.3",
-        "1994/abandoned-cart-statamic": "dev-main",
+        "1994/abandoned-cart-statamic": "^1.0",
         "duncanmcclean/statamic-cargo": "^1.15",
         "laravel/framework": "^13.17",
         "laravel/tinker": "^3.0",
@@ -99,11 +99,5 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
-    "license": "MIT",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/1994limited/abandoned-cart-statamic"
-        }
-    ]
+    "license": "MIT"
 }

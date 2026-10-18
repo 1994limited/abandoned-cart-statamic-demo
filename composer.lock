@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6716cb27f56a6fc99a8022b01a285306",
+    "content-hash": "6562f10a6a9eb9d279ec30dcc81c7e4a",
     "packages": [
         {
             "name": "1994/abandoned-cart-statamic",
-            "version": "dev-main",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/1994limited/abandoned-cart-statamic.git",
-                "reference": "9d6552cb107979520b79d7b0042458d0c1644f4a"
+                "reference": "bd6e0ebcd769d8f9cc79f457130e40c6b1d03d84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/1994limited/abandoned-cart-statamic/zipball/9d6552cb107979520b79d7b0042458d0c1644f4a",
-                "reference": "9d6552cb107979520b79d7b0042458d0c1644f4a",
+                "url": "https://api.github.com/repos/1994limited/abandoned-cart-statamic/zipball/bd6e0ebcd769d8f9cc79f457130e40c6b1d03d84",
+                "reference": "bd6e0ebcd769d8f9cc79f457130e40c6b1d03d84",
                 "shasum": ""
             },
             "require": {
@@ -30,19 +30,18 @@
                 "orchestra/testbench": "^10.0|^11.0",
                 "phpunit/phpunit": "^12.0"
             },
-            "default-branch": true,
             "type": "statamic-addon",
             "extra": {
-                "statamic": {
-                    "name": "Abandoned Cart",
-                    "description": "Abandoned cart recovery for Cargo. Reminder emails with a link that brings the basket back, and what they recovered.",
-                    "developer": "1994",
-                    "developer-url": "https://1994.co.uk"
-                },
                 "laravel": {
                     "providers": [
                         "NineteenNinetyFour\\AbandonedCart\\ServiceProvider"
                     ]
+                },
+                "statamic": {
+                    "name": "Abandoned Cart",
+                    "developer": "1994",
+                    "description": "Abandoned cart recovery for Cargo. Reminder emails with a link that brings the basket back, and what they recovered.",
+                    "developer-url": "https://1994.co.uk"
                 }
             },
             "autoload": {
@@ -50,11 +49,7 @@
                     "NineteenNinetyFour\\AbandonedCart\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "NineteenNinetyFour\\AbandonedCart\\Tests\\": "tests"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -77,10 +72,10 @@
             ],
             "support": {
                 "email": "hello@1994.co.uk",
-                "source": "https://github.com/1994limited/abandoned-cart-statamic/tree/main",
-                "issues": "https://github.com/1994limited/abandoned-cart-statamic/issues"
+                "issues": "https://github.com/1994limited/abandoned-cart-statamic/issues",
+                "source": "https://github.com/1994limited/abandoned-cart-statamic/tree/v1.0.0"
             },
-            "time": "2026-10-18T17:31:15+00:00"
+            "time": "2026-10-18T18:23:24+00:00"
         },
         {
             "name": "ajthinking/archetype",
@@ -12823,9 +12818,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "1994/abandoned-cart-statamic": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
