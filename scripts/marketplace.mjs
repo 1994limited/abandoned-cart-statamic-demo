@@ -13,7 +13,7 @@ const addon = process.env.ADDON || new URL('../../abandoned-cart-statamic', impo
 const out = `${addon}/docs/marketplace`;
 const chrome = process.env.CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 
-const blue = '#1E3B5A';
+const blue = '#582A45';
 const mark = readFileSync(`${addon}/resources/brand/mark-colour.svg`, 'utf8').replace(/width="512" height="512"/, 'width="40" height="40"');
 
 // A screenshot (2560 wide, @2x), cropped to x, y, w, h and shown `width`
