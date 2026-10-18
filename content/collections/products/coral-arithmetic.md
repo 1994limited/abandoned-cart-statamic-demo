@@ -25,5 +25,5 @@ product_variants:
       key: Paperback
       variant: Paperback
       price: '13.00'
-      stock: 5
+      stock: 4
 ---
