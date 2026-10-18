@@ -11,13 +11,13 @@
             "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "git@github.com:1994limited/abandoned-cart-statamic.git",
-                "reference": "4af03be3dda04d59d0f419af1d0e1af5b9a19cd7"
+                "url": "https://github.com/1994limited/abandoned-cart-statamic.git",
+                "reference": "9d6552cb107979520b79d7b0042458d0c1644f4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/1994limited/abandoned-cart-statamic/zipball/4af03be3dda04d59d0f419af1d0e1af5b9a19cd7",
-                "reference": "4af03be3dda04d59d0f419af1d0e1af5b9a19cd7",
+                "url": "https://api.github.com/repos/1994limited/abandoned-cart-statamic/zipball/9d6552cb107979520b79d7b0042458d0c1644f4a",
+                "reference": "9d6552cb107979520b79d7b0042458d0c1644f4a",
                 "shasum": ""
             },
             "require": {
@@ -80,7 +80,7 @@
                 "source": "https://github.com/1994limited/abandoned-cart-statamic/tree/main",
                 "issues": "https://github.com/1994limited/abandoned-cart-statamic/issues"
             },
-            "time": "2026-10-18T12:50:01+00:00"
+            "time": "2026-10-18T17:31:15+00:00"
         },
         {
             "name": "ajthinking/archetype",

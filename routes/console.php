@@ -90,6 +90,23 @@ Artisan::command('demo:carts {--fresh : Delete every basket, order and one-off c
 
     // Paid with Cargo's dummy gateway, as the demo's checkout does.
     $checkout = function ($basket) {
+        // Orders use up stock: keep enough of what's ordered for the next run.
+        foreach ($basket->lineItems() as $item) {
+            $product = $item->product();
+
+            if ($product && ! $item->variant && $product->isStockEnabled() && $product->stock() < 3) {
+                $product->set('stock', 3)->saveQuietly();
+            }
+
+            if ($product && $item->variant) {
+                $variants = $product->get('product_variants');
+                $variants['options'] = collect($variants['options'] ?? [])
+                    ->map(fn ($option) => $option['key'] === $item->variant && isset($option['stock']) && $option['stock'] < 3 ? array_merge($option, ['stock' => 3]) : $option)
+                    ->all();
+                $product->set('product_variants', $variants)->saveQuietly();
+            }
+        }
+
         $gateway = \DuncanMcClean\Cargo\Facades\PaymentGateway::find('dummy');
         $basket->set('payment_gateway', 'dummy')->saveWithoutRecalculating();
 
@@ -177,6 +194,9 @@ Artisan::command('demo:carts {--fresh : Delete every basket, order and one-off c
 
     \Illuminate\Support\Carbon::setTestNow();
     $cart::forgetCurrentCart();
+
+    // A run now, so the Control Panel knows the scheduler's working.
+    $sender->sendDue();
 
     $this->info("Made {$made} baskets, and sent their reminders to the HELO inbox.");
 })->purpose('Add baskets left behind in every state, and send their reminders');

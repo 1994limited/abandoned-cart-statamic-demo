@@ -9,5 +9,5 @@ cover: '#C9A227'
 cover_ink: '#1B2433'
 cover_style: block
 blurb: 'Twelve stories, each set on one day of unremarkable weather.'
-stock: 0
+stock: 2
 ---
