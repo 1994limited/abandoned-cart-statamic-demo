@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "1994/abandoned-cart-statamic",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/1994limited/abandoned-cart-statamic.git",
-                "reference": "bd6e0ebcd769d8f9cc79f457130e40c6b1d03d84"
+                "reference": "7e1e2fe06781bde13562da7b671eb75380467e19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/1994limited/abandoned-cart-statamic/zipball/bd6e0ebcd769d8f9cc79f457130e40c6b1d03d84",
-                "reference": "bd6e0ebcd769d8f9cc79f457130e40c6b1d03d84",
+                "url": "https://api.github.com/repos/1994limited/abandoned-cart-statamic/zipball/7e1e2fe06781bde13562da7b671eb75380467e19",
+                "reference": "7e1e2fe06781bde13562da7b671eb75380467e19",
                 "shasum": ""
             },
             "require": {
@@ -73,9 +73,9 @@
             "support": {
                 "email": "hello@1994.co.uk",
                 "issues": "https://github.com/1994limited/abandoned-cart-statamic/issues",
-                "source": "https://github.com/1994limited/abandoned-cart-statamic/tree/v1.0.0"
+                "source": "https://github.com/1994limited/abandoned-cart-statamic/tree/v1.0.1"
             },
-            "time": "2026-10-18T18:23:24+00:00"
+            "time": "2026-10-18T18:37:27+00:00"
         },
         {
             "name": "ajthinking/archetype",
